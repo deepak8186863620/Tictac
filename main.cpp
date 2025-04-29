@@ -54,3 +54,6 @@ bool isDraw() {
                 return false;
     return true;
 }
+void switchPlayer() {
+    currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+}
