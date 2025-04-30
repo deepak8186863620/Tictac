@@ -54,3 +54,40 @@ bool isDraw() {
                 return false;
     return true;
 }
+void switchPlayer() {
+    currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+}
+
+int main() {
+    int move;
+    initializeBoard();
+
+    cout << "Welcome to Tic-Tac-Toe (2 Player)\n";
+    printBoard();
+
+    while (true) {
+        cout << "Player " << currentPlayer << ", enter your move (1-9): ";
+        cin >> move;
+
+        if (move < 1 || move > 9 || !makeMove(move)) {
+            cout << "Invalid move. Try again.\n";
+            continue;
+        }
+
+        printBoard();
+
+        if (checkWin()) {
+            cout << "Player " << currentPlayer << " wins!\n";
+            break;
+        }
+
+        if (isDraw()) {
+            cout << "It's a draw!\n";
+            break;
+        }
+
+        switchPlayer();
+    }
+
+    return 0;
+}
