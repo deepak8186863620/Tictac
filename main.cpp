@@ -57,3 +57,9 @@ bool isDraw() {
 void switchPlayer() {
     currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
 }
+int main() {
+    int move;
+    initializeBoard();
+
+    cout << "Welcome to Tic-Tac-Toe (2 Player)\n";
+    printBoard();
